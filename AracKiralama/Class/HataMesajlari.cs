@@ -43,5 +43,9 @@ namespace AracKiralama.Class
             MessageBox.Show("Lütfen seçim yapınız!", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        internal static void AktifSecim()
+        {
+            MessageBox.Show("Lütfen aktif olan bir kiralamayı seçiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

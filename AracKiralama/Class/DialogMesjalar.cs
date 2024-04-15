@@ -35,5 +35,16 @@ namespace AracKiralama.Class
         {
             res = MessageBox.Show("Silmek İstediğinize Emin Misiniz?", "Dikkat!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
+
+        internal void Rent()
+        {
+            res = MessageBox.Show("Bu Aracı Kiralamak İstediğinize Emin Misiniz?", "Dikkat!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+
+        internal void CancelRent()
+        {
+            res = MessageBox.Show("Bu Kiralamayı İptal Etmek İstediğinize Emin Misiniz?", "Dikkat!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+        }
     }
 }

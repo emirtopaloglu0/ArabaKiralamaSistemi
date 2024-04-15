@@ -21,8 +21,8 @@ namespace AracKiralama.View.AdminView
         {
             InitializeComponent();
         }
-            
-       public Timer timer1 = new Timer();
+
+        public Timer timer1 = new Timer();
 
         private void A_Musteriler_Load(object sender, EventArgs e)
         {
@@ -43,19 +43,30 @@ namespace AracKiralama.View.AdminView
             {
 
             }
-            
+
         }
 
         private void ActiveRentals_Btn_Click(object sender, EventArgs e)
         {
-            List<Kiralamalar> rentals = db.Kiralamalar.Where(x=> x.AktifMi == true).ToList();
+            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.AktifMi == true).ToList();
             RentalsDataGrid.DataSource = rentals;
+            MarkaTextBox.Text = null;
+            ModelTextBox.Text = null;
+            YakitTextBox.Text = null;
+            KmTextBox.Text = null;
             panel1.Show();
-            
+
         }
 
         private void CancelledRentals_Btn_Click(object sender, EventArgs e)
         {
+            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.IptalMi == true).ToList();
+            RentalsDataGrid.DataSource = rentals;
+            RentalsDataGrid.DataSource = rentals;
+            MarkaTextBox.Text = null;
+            ModelTextBox.Text = null;
+            YakitTextBox.Text = null;
+            KmTextBox.Text = null;
             panel1.Show();
 
         }
@@ -66,8 +77,24 @@ namespace AracKiralama.View.AdminView
             {
                 userId = Convert.ToInt32(CustomersDataGrid.SelectedCells[0].Value);
                 Username_Textbox.Text = CustomersDataGrid.SelectedCells[1].Value.ToString();
-                DOB_Textbox.Text = CustomersDataGrid.SelectedCells[2].Value.ToString(); 
-                Licance_Textbox.Text = CustomersDataGrid.SelectedCells[3].Value.ToString(); 
+                DOB_Textbox.Text = CustomersDataGrid.SelectedCells[2].Value.ToString();
+                Licance_Textbox.Text = CustomersDataGrid.SelectedCells[3].Value.ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void RentalsDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var car = db.Araba.Find(RentalsDataGrid.SelectedCells[1].Value);
+                MarkaTextBox.Text = car.Marka;
+                ModelTextBox.Text = car.Model;
+                YakitTextBox.Text = car.Yakit_Turu;
+                KmTextBox.Text = car.Kilometre.ToString();
             }
             catch
             {

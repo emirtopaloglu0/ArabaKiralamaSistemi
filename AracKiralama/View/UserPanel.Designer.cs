@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.u_Kiralamalarım1 = new AracKiralama.View.UserView.U_Kiralamalarım();
+            this.u_Ayarlar1 = new AracKiralama.View.UserView.U_Ayarlar();
             this.u_AracKirala1 = new AracKiralama.View.UserView.U_AracKirala();
             this.panel2 = new System.Windows.Forms.Panel();
             this.logout_Btn = new System.Windows.Forms.PictureBox();
@@ -39,8 +41,6 @@
             this.MyRentals_Btn = new System.Windows.Forms.Button();
             this.userLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.u_Ayarlar1 = new AracKiralama.View.UserView.U_Ayarlar();
-            this.u_Kiralamalarım1 = new AracKiralama.View.UserView.U_Kiralamalarım();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +67,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1090, 620);
             this.panel4.TabIndex = 1;
+            // 
+            // u_Kiralamalarım1
+            // 
+            this.u_Kiralamalarım1.Location = new System.Drawing.Point(3, 0);
+            this.u_Kiralamalarım1.Name = "u_Kiralamalarım1";
+            this.u_Kiralamalarım1.Size = new System.Drawing.Size(1089, 619);
+            this.u_Kiralamalarım1.TabIndex = 2;
+            // 
+            // u_Ayarlar1
+            // 
+            this.u_Ayarlar1.Location = new System.Drawing.Point(3, 1);
+            this.u_Ayarlar1.Name = "u_Ayarlar1";
+            this.u_Ayarlar1.Size = new System.Drawing.Size(1089, 619);
+            this.u_Ayarlar1.TabIndex = 1;
             // 
             // u_AracKirala1
             // 
@@ -120,6 +134,7 @@
             this.Settings_Btn.TabIndex = 15;
             this.Settings_Btn.Text = "Ayarlar";
             this.Settings_Btn.UseVisualStyleBackColor = false;
+            this.Settings_Btn.Click += new System.EventHandler(this.Settings_Btn_Click);
             // 
             // RentCar_Btn
             // 
@@ -132,6 +147,7 @@
             this.RentCar_Btn.TabIndex = 15;
             this.RentCar_Btn.Text = "Araç Kirala";
             this.RentCar_Btn.UseVisualStyleBackColor = false;
+            this.RentCar_Btn.Click += new System.EventHandler(this.RentCar_Btn_Click);
             // 
             // MyRentals_Btn
             // 
@@ -144,6 +160,7 @@
             this.MyRentals_Btn.TabIndex = 15;
             this.MyRentals_Btn.Text = "Kiralamalarım";
             this.MyRentals_Btn.UseVisualStyleBackColor = false;
+            this.MyRentals_Btn.Click += new System.EventHandler(this.MyRentals_Btn_Click);
             // 
             // userLabel
             // 
@@ -164,20 +181,6 @@
             this.label1.Size = new System.Drawing.Size(120, 23);
             this.label1.TabIndex = 13;
             this.label1.Text = "Hoş Geldiniz";
-            // 
-            // u_Ayarlar1
-            // 
-            this.u_Ayarlar1.Location = new System.Drawing.Point(3, 1);
-            this.u_Ayarlar1.Name = "u_Ayarlar1";
-            this.u_Ayarlar1.Size = new System.Drawing.Size(1089, 619);
-            this.u_Ayarlar1.TabIndex = 1;
-            // 
-            // u_Kiralamalarım1
-            // 
-            this.u_Kiralamalarım1.Location = new System.Drawing.Point(3, 0);
-            this.u_Kiralamalarım1.Name = "u_Kiralamalarım1";
-            this.u_Kiralamalarım1.Size = new System.Drawing.Size(1089, 619);
-            this.u_Kiralamalarım1.TabIndex = 2;
             // 
             // UserPanel
             // 

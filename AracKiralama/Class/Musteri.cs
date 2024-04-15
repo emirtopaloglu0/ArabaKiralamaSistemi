@@ -117,6 +117,30 @@ namespace AracKiralama.Class
 
         }
 
+        internal void AracKirala(int carId, int userId)
+        {
+            //arabayı boşta durumdan çıkaracak, kiralama aktif olacak, tarih kiralandığı an olacak ama tarih formatına dikkat
+            try
+            {
+                var arac = musteri.Araba.Find(carId);
+                var user = musteri.Kullanici.Find(userId);
 
+                Kiralamalar kirala = new Kiralamalar();
+                kirala.Kullanici_Id = user.Id;
+                kirala.Arac_Id = arac.Id;
+                kirala.AktifMi = true;
+                kirala.Tarih = DateTime.Now;
+                arac.BostaMi = false;
+                musteri.Kiralamalar.Add(kirala);
+                musteri.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
+
+
+        }
     }
 }

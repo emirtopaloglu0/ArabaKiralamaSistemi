@@ -33,15 +33,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.AddCar_Btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.logout_Btn = new System.Windows.Forms.PictureBox();
             this.a_Musteriler1 = new AracKiralama.View.AdminView.A_Musteriler();
             this.a_Araclar1 = new AracKiralama.View.AdminView.A_Araclar();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logout_Btn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.logout_Btn);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -94,6 +97,18 @@
             this.panel2.Size = new System.Drawing.Size(1087, 626);
             this.panel2.TabIndex = 1;
             // 
+            // logout_Btn
+            // 
+            this.logout_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logout_Btn.Image = global::AracKiralama.Properties.Resources.logout1;
+            this.logout_Btn.Location = new System.Drawing.Point(3, 580);
+            this.logout_Btn.Name = "logout_Btn";
+            this.logout_Btn.Size = new System.Drawing.Size(46, 43);
+            this.logout_Btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logout_Btn.TabIndex = 18;
+            this.logout_Btn.TabStop = false;
+            this.logout_Btn.Click += new System.EventHandler(this.logout_Btn_Click);
+            // 
             // a_Musteriler1
             // 
             this.a_Musteriler1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -104,6 +119,7 @@
             // 
             // a_Araclar1
             // 
+            this.a_Araclar1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.a_Araclar1.Location = new System.Drawing.Point(2, 3);
             this.a_Araclar1.Name = "a_Araclar1";
             this.a_Araclar1.Size = new System.Drawing.Size(1085, 624);
@@ -122,6 +138,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logout_Btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +152,6 @@
         private System.Windows.Forms.Panel panel2;
         private AdminView.A_Araclar a_Araclar1;
         private AdminView.A_Musteriler a_Musteriler1;
+        private System.Windows.Forms.PictureBox logout_Btn;
     }
 }

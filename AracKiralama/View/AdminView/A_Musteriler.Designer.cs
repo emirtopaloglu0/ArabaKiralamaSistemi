@@ -39,18 +39,15 @@
             this.ActiveRentals_Btn = new System.Windows.Forms.Button();
             this.CancelledRentals_Btn = new System.Windows.Forms.Button();
             this.RentalsDataGrid = new System.Windows.Forms.DataGridView();
-            this.IptalMi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.MarkaTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ModelTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.KmTextBox = new System.Windows.Forms.TextBox();
+            this.YakitTextBox = new System.Windows.Forms.TextBox();
             this.ıdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aracIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kullaniciIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -177,83 +174,56 @@
             // 
             this.RentalsDataGrid.AllowUserToAddRows = false;
             this.RentalsDataGrid.AllowUserToDeleteRows = false;
-            this.RentalsDataGrid.AllowUserToOrderColumns = true;
             this.RentalsDataGrid.AutoGenerateColumns = false;
             this.RentalsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RentalsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ıdDataGridViewTextBoxColumn1,
             this.aracIdDataGridViewTextBoxColumn,
             this.kullaniciIdDataGridViewTextBoxColumn,
-            this.tarihDataGridViewTextBoxColumn,
-            this.IptalMi});
+            this.tarihDataGridViewTextBoxColumn});
             this.RentalsDataGrid.DataSource = this.kiralamalarBindingSource;
             this.RentalsDataGrid.Location = new System.Drawing.Point(0, 3);
             this.RentalsDataGrid.Name = "RentalsDataGrid";
+            this.RentalsDataGrid.ReadOnly = true;
             this.RentalsDataGrid.Size = new System.Drawing.Size(370, 382);
             this.RentalsDataGrid.TabIndex = 16;
+            this.RentalsDataGrid.SelectionChanged += new System.EventHandler(this.RentalsDataGrid_SelectionChanged);
             // 
-            // IptalMi
+            // MarkaTextBox
             // 
-            this.IptalMi.DataPropertyName = "Iptal Mi";
-            this.IptalMi.HeaderText = "IptalMi";
-            this.IptalMi.Name = "IptalMi";
-            this.IptalMi.Width = 40;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(376, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(179, 30);
-            this.textBox1.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(420, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 23);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Araba Adı";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(376, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(179, 30);
-            this.textBox2.TabIndex = 13;
+            this.MarkaTextBox.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MarkaTextBox.Location = new System.Drawing.Point(376, 82);
+            this.MarkaTextBox.Name = "MarkaTextBox";
+            this.MarkaTextBox.ReadOnly = true;
+            this.MarkaTextBox.Size = new System.Drawing.Size(179, 30);
+            this.MarkaTextBox.TabIndex = 13;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(405, 88);
+            this.label5.Location = new System.Drawing.Point(405, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 23);
             this.label5.TabIndex = 14;
             this.label5.Text = "Araba Marka";
             // 
-            // textBox3
+            // ModelTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(376, 183);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(179, 30);
-            this.textBox3.TabIndex = 13;
+            this.ModelTextBox.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ModelTextBox.Location = new System.Drawing.Point(376, 146);
+            this.ModelTextBox.Name = "ModelTextBox";
+            this.ModelTextBox.ReadOnly = true;
+            this.ModelTextBox.Size = new System.Drawing.Size(179, 30);
+            this.ModelTextBox.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(405, 152);
+            this.label6.Location = new System.Drawing.Point(405, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 23);
             this.label6.TabIndex = 14;
@@ -264,64 +234,63 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.KmTextBox);
             this.panel1.Controls.Add(this.RentalsDataGrid);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.YakitTextBox);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.ModelTextBox);
+            this.panel1.Controls.Add(this.MarkaTextBox);
             this.panel1.Location = new System.Drawing.Point(527, 241);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(558, 379);
             this.panel1.TabIndex = 17;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(375, 247);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(179, 30);
-            this.textBox4.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(409, 216);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 23);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Araba Yakıt";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.Location = new System.Drawing.Point(375, 311);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(179, 30);
-            this.textBox5.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label8.Location = new System.Drawing.Point(387, 280);
+            this.label8.Location = new System.Drawing.Point(387, 243);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(155, 23);
             this.label8.TabIndex = 14;
             this.label8.Text = "Araba Kilometre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.Location = new System.Drawing.Point(409, 179);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 23);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Araba Yakıt";
+            // 
+            // KmTextBox
+            // 
+            this.KmTextBox.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KmTextBox.Location = new System.Drawing.Point(375, 274);
+            this.KmTextBox.Name = "KmTextBox";
+            this.KmTextBox.ReadOnly = true;
+            this.KmTextBox.Size = new System.Drawing.Size(179, 30);
+            this.KmTextBox.TabIndex = 13;
+            // 
+            // YakitTextBox
+            // 
+            this.YakitTextBox.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.YakitTextBox.Location = new System.Drawing.Point(375, 210);
+            this.YakitTextBox.Name = "YakitTextBox";
+            this.YakitTextBox.ReadOnly = true;
+            this.YakitTextBox.Size = new System.Drawing.Size(179, 30);
+            this.YakitTextBox.TabIndex = 13;
             // 
             // ıdDataGridViewTextBoxColumn1
             // 
             this.ıdDataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.ıdDataGridViewTextBoxColumn1.HeaderText = "Id";
             this.ıdDataGridViewTextBoxColumn1.Name = "ıdDataGridViewTextBoxColumn1";
+            this.ıdDataGridViewTextBoxColumn1.ReadOnly = true;
             this.ıdDataGridViewTextBoxColumn1.Width = 30;
             // 
             // aracIdDataGridViewTextBoxColumn
@@ -329,6 +298,7 @@
             this.aracIdDataGridViewTextBoxColumn.DataPropertyName = "Arac_Id";
             this.aracIdDataGridViewTextBoxColumn.HeaderText = "Arac_Id";
             this.aracIdDataGridViewTextBoxColumn.Name = "aracIdDataGridViewTextBoxColumn";
+            this.aracIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.aracIdDataGridViewTextBoxColumn.Width = 70;
             // 
             // kullaniciIdDataGridViewTextBoxColumn
@@ -336,6 +306,7 @@
             this.kullaniciIdDataGridViewTextBoxColumn.DataPropertyName = "Kullanici_Id";
             this.kullaniciIdDataGridViewTextBoxColumn.HeaderText = "Kullanici_Id";
             this.kullaniciIdDataGridViewTextBoxColumn.Name = "kullaniciIdDataGridViewTextBoxColumn";
+            this.kullaniciIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.kullaniciIdDataGridViewTextBoxColumn.Width = 70;
             // 
             // tarihDataGridViewTextBoxColumn
@@ -343,6 +314,7 @@
             this.tarihDataGridViewTextBoxColumn.DataPropertyName = "Tarih";
             this.tarihDataGridViewTextBoxColumn.HeaderText = "Tarih";
             this.tarihDataGridViewTextBoxColumn.Name = "tarihDataGridViewTextBoxColumn";
+            this.tarihDataGridViewTextBoxColumn.ReadOnly = true;
             this.tarihDataGridViewTextBoxColumn.Width = 70;
             // 
             // kiralamalarBindingSource
@@ -429,21 +401,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ehliyetTarihiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView RentalsDataGrid;
         private System.Windows.Forms.BindingSource kiralamalarBindingSource;
+        private System.Windows.Forms.TextBox MarkaTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox ModelTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox YakitTextBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox KmTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn ıdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn aracIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn kullaniciIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tarihDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IptalMi;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
     }
 }

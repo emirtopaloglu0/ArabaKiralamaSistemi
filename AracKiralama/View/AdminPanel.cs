@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AracKiralama.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +38,16 @@ namespace AracKiralama.View
             a_Musteriler1.Show();
             a_Musteriler1.timer1.Start();
             a_Araclar1.timer2.Stop();
+        }
+
+        private void logout_Btn_Click(object sender, EventArgs e)
+        {
+            DialogMesjalar.instance.LogoutUserPanel();
+            if (DialogMesjalar.instance.res == DialogResult.Yes)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
     }
 }
