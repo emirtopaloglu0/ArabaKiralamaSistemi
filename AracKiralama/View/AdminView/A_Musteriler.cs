@@ -80,6 +80,7 @@ namespace AracKiralama.View.AdminView
                 Username_Textbox.Text = CustomersDataGrid.SelectedCells[1].Value.ToString();
                 DOB_Textbox.Text = CustomersDataGrid.SelectedCells[2].Value.ToString();
                 Licance_Textbox.Text = CustomersDataGrid.SelectedCells[3].Value.ToString();
+                panel1.Hide();
             }
             catch
             {
