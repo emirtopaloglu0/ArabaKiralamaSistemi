@@ -48,7 +48,8 @@ namespace AracKiralama.View.AdminView
 
         private void ActiveRentals_Btn_Click(object sender, EventArgs e)
         {
-            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.AktifMi == true).ToList();
+            var user = db.Kullanici.FirstOrDefault(x=> x.Kullanici_Adi == Username_Textbox.Text.Trim());
+            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.AktifMi == true && x.Kullanici_Id == user.Id).ToList();
             RentalsDataGrid.DataSource = rentals;
             MarkaTextBox.Text = null;
             ModelTextBox.Text = null;
@@ -60,7 +61,8 @@ namespace AracKiralama.View.AdminView
 
         private void CancelledRentals_Btn_Click(object sender, EventArgs e)
         {
-            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.IptalMi == true || x.AktifMi == false).ToList();
+            var user = db.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == Username_Textbox.Text.Trim());
+            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => (x.IptalMi == true || x.AktifMi == false) && x.Kullanici_Id == user.Id).ToList();
             RentalsDataGrid.DataSource = rentals;
             RentalsDataGrid.DataSource = rentals;
             MarkaTextBox.Text = null;

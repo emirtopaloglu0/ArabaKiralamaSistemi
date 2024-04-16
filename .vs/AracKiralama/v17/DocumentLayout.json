@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Okul Projeleri\\1 Arac Kiralama Sistemi\\AracKiralama\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AFF345CB-FBB7-4BFE-BE7F-C9CEBD894E38}|AracKiralama\\AracKiralama.csproj|d:\\okul projeleri\\1 arac kiralama sistemi\\arackiralama\\arackiralama\\view\\adminview\\a_musteriler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFF345CB-FBB7-4BFE-BE7F-C9CEBD894E38}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\view\\adminview\\a_musteriler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFF345CB-FBB7-4BFE-BE7F-C9CEBD894E38}|AracKiralama\\AracKiralama.csproj|d:\\okul projeleri\\1 arac kiralama sistemi\\arackiralama\\arackiralama\\view\\adminview\\a_musteriler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AFF345CB-FBB7-4BFE-BE7F-C9CEBD894E38}|AracKiralama\\AracKiralama.csproj|solutionrelative:arackiralama\\view\\adminview\\a_musteriler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "A_Musteriler.cs",
+              "DocumentMoniker": "D:\\Okul Projeleri\\1 Arac Kiralama Sistemi\\AracKiralama\\AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "ToolTip": "D:\\Okul Projeleri\\1 Arac Kiralama Sistemi\\AracKiralama\\AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "RelativeToolTip": "AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAiwEIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T12:49:03.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "A_Musteriler.cs [Design]",
+              "DocumentMoniker": "D:\\Okul Projeleri\\1 Arac Kiralama Sistemi\\AracKiralama\\AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "RelativeDocumentMoniker": "AracKiralama\\View\\AdminView\\A_Musteriler.cs",
+              "ToolTip": "D:\\Okul Projeleri\\1 Arac Kiralama Sistemi\\AracKiralama\\AracKiralama\\View\\AdminView\\A_Musteriler.cs [Design]",
+              "RelativeToolTip": "AracKiralama\\View\\AdminView\\A_Musteriler.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T12:49:00.122Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

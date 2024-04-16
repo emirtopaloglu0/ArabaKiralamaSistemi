@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArabaKiralamaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Araba">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Kategori" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Yakit_Turu" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Vites_Turu" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Plaka" Type="String" MaxLength="15" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Kilometre" Type="Int32" Nullable="false" />
+    <Property Name="BostaMi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Kiralamalar" Relationship="Self.FK_Kiralamalar_Araba" FromRole="Araba" ToRole="Kiralamalar" />
+    <Property Name="SilindiMi" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kiralamalar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Arac_Id" Type="Int32" Nullable="false" />
+    <Property Name="Kullanici_Id" Type="Int32" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="IptalMi" Type="Boolean" Nullable="false" />
+    <Property Name="AktifMi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Araba" Relationship="Self.FK_Kiralamalar_Araba" FromRole="Kiralamalar" ToRole="Araba" />
+    <NavigationProperty Name="Kullanici" Relationship="Self.FK_Kiralamalar_Kullanici" FromRole="Kiralamalar" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Kullanici_Adi" Type="String" MaxLength="25" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Dogum_Tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Ehliyet_Tarihi" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Kiralamalar" Relationship="Self.FK_Kiralamalar_Kullanici" FromRole="Kullanici" ToRole="Kiralamalar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Kiralamalar_Araba">
+    <End Role="Araba" Type="Self.Araba" Multiplicity="1" />
+    <End Role="Kiralamalar" Type="Self.Kiralamalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Araba">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kiralamalar">
+        <PropertyRef Name="Arac_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kiralamalar_Kullanici">
+    <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="1" />
+    <End Role="Kiralamalar" Type="Self.Kiralamalar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanici">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kiralamalar">
+        <PropertyRef Name="Kullanici_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ArabaKiralamaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Araba" EntityType="Self.Araba" />
+    <EntitySet Name="Kiralamalar" EntityType="Self.Kiralamalar" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Kiralamalar_Araba" Association="Self.FK_Kiralamalar_Araba">
+      <End Role="Araba" EntitySet="Araba" />
+      <End Role="Kiralamalar" EntitySet="Kiralamalar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kiralamalar_Kullanici" Association="Self.FK_Kiralamalar_Kullanici">
+      <End Role="Kullanici" EntitySet="Kullanici" />
+      <End Role="Kiralamalar" EntitySet="Kiralamalar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
