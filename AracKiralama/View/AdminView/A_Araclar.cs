@@ -50,6 +50,7 @@ namespace AracKiralama.View.AdminView
         }
         public int carId, km;
         public string marka, model, kategori, yakit_turu, vites_turu, plaka;
+        public bool aracDurumu;
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -87,6 +88,22 @@ namespace AracKiralama.View.AdminView
         {
             if (Id_TextBox.Text != null)
             {
+                try
+                {
+                    var kirala = db.Araba.Find(Int32.Parse(Id_TextBox.Text));
+                    if (kirala.BostaMi)
+                    {
+                        aracDurumu = true;
+                    }
+                    else
+                    {
+                        aracDurumu = false;
+                    }
+                }
+                catch
+                {
+
+                }
                 AracGuncelleme aracGuncelleme = new AracGuncelleme();
                 aracGuncelleme.ShowDialog();
             }

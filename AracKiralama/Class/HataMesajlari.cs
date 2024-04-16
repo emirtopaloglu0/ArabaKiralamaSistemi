@@ -42,10 +42,14 @@ namespace AracKiralama.Class
         {
             MessageBox.Show("Lütfen seçim yapınız!", "Dikkat!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
         internal static void AktifSecim()
         {
             MessageBox.Show("Lütfen aktif olan bir kiralamayı seçiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal static void EskiSifreYanlis()
+        {
+            MessageBox.Show("Eski şifrenizi yanlış girdiniz!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

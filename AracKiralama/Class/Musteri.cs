@@ -28,9 +28,9 @@ namespace AracKiralama.Class
                     try
                     {
                         var user = musteri.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == username);
-                        var password = musteri.Kullanici.FirstOrDefault(x => x.Sifre == pass);
+                        //var password = musteri.Kullanici.FirstOrDefault(x => x.Sifre == pass);
 
-                        if (user.Id == password.Id)
+                        if (user.Sifre.Trim() == pass)
                         {
                             return true;
                         }
@@ -40,7 +40,7 @@ namespace AracKiralama.Class
                             HataMesajlari.KullaniciBulunamadi();
                             return false;
                         }
-                        else if (user.Id != password.Id)
+                        else if (user.Sifre.Trim() != pass)
                         {
                             HataMesajlari.Uyumsuz();
                             return false;
@@ -50,21 +50,17 @@ namespace AracKiralama.Class
                             return false;
                         }
                     }
-                    catch 
+                    catch
                     {
-                        
+
                     }
-
                 }
-
             }
             catch
             {
                 return false;
             }
-            
             return false;
-
         }
 
         public bool GirisYap(string username, string pass)
@@ -99,7 +95,7 @@ namespace AracKiralama.Class
                     musteri.SaveChanges();
                     BasariliMesajlar.KayitBasarili();
                 }
-                catch 
+                catch
                 {
                     throw new NotImplementedException();
                 }
@@ -112,14 +108,56 @@ namespace AracKiralama.Class
 
         }
 
-        void KullaniciAdiDegistir()
+        internal bool KullaniciAdiDegistir(string username, string newUsername)
         {
+            try
+            {
+                var newUser = musteri.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == newUsername);
+                if(newUser == null)
+                {
+                    var user = musteri.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == username);
+                    user.Kullanici_Adi = newUsername; 
+                    musteri.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    HataMesajlari.KullaniciVar();
+                }
+            }
+            catch
+            {
 
+            }
+            return false;
         }
 
-        internal void AracKirala(int carId, int userId)
+        internal bool SifreDegistir(string username, string oldPass, string newPass)
         {
-            //arabayı boşta durumdan çıkaracak, kiralama aktif olacak, tarih kiralandığı an olacak ama tarih formatına dikkat
+            try
+            {
+                var user = musteri.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == username);
+                if(user.Sifre.Trim() == oldPass)
+                {
+                    user.Sifre = newPass;
+                    musteri.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    HataMesajlari.EskiSifreYanlis();
+                }
+
+            }
+            catch
+            {
+
+            }
+            return false;
+        }
+
+        /*internal void AracKirala(int carId, int userId)
+        {
             try
             {
                 var arac = musteri.Araba.Find(carId);
@@ -138,9 +176,9 @@ namespace AracKiralama.Class
             {
                 throw new Exception(ex.Message);
             }
-            
 
 
-        }
+
+        }*/
     }
 }

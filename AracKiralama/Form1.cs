@@ -18,13 +18,12 @@ namespace AracKiralama
 
         public static Form1 instance;
         public static ArabaKiralamaEntities db;
-        public char[] charsToTrim = { '*', ' ', '\'', '_', '-', '+', '$', '!', '^', '#', '%', '&', '/', '?', '(', ')', '=' };
+        public char[] charsToTrim = { '*', ' ', '\'', '_', '-', '+', '$', '!', '^', '#', '%', '&', '/', '?', '(', ')', '=', '<', '>', '|', '£', '½', '{', '[', ']', '}'};
 
 
         public Form1()
         {
             InitializeComponent();
-           
             Timer zaman = new Timer();
             zaman.Interval = 1000;
             zaman.Tick += Zaman_Tick;

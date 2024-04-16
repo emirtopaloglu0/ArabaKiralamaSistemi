@@ -60,7 +60,7 @@ namespace AracKiralama.View.AdminView
 
         private void CancelledRentals_Btn_Click(object sender, EventArgs e)
         {
-            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.IptalMi == true).ToList();
+            List<Kiralamalar> rentals = db.Kiralamalar.Where(x => x.IptalMi == true || x.AktifMi == false).ToList();
             RentalsDataGrid.DataSource = rentals;
             RentalsDataGrid.DataSource = rentals;
             MarkaTextBox.Text = null;
@@ -68,7 +68,6 @@ namespace AracKiralama.View.AdminView
             YakitTextBox.Text = null;
             KmTextBox.Text = null;
             panel1.Show();
-
         }
 
         private void CustomersDataGrid_SelectionChanged(object sender, EventArgs e)

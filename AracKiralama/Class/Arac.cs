@@ -1,4 +1,5 @@
 ﻿using AracKiralama.Model;
+using AracKiralama.View.AdminView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,8 @@ namespace AracKiralama.Class
         ArabaKiralamaEntities araba = new ArabaKiralamaEntities();
 
 
-        void KiralamaDurumu()
-        {
-
-        }
-
         public bool DurumGuncelle(int id, string marka, string model, string kategori, string yakit, string vites,
-            string plaka, int kilometre)
+            string plaka, int kilometre, string aracDurum)
         {
             try
             {
@@ -31,6 +27,20 @@ namespace AracKiralama.Class
                 car.Vites_Turu = vites;
                 car.Plaka = plaka;
                 car.Kilometre = kilometre;
+                if(aracDurum == "Boşta")
+                {
+                    car.BostaMi = true;
+                    if (!A_Araclar.instance.aracDurumu)
+                    {
+                        var kirala = araba.Kiralamalar.FirstOrDefault(x => x.Arac_Id == car.Id && x.AktifMi == true);
+                        kirala.IptalMi = true;
+                        kirala.AktifMi = false;
+                    }
+                }
+                else if (aracDurum == "Dolu")
+                {
+                    car.BostaMi = false;
+                }
                 araba.SaveChanges();
                 BasariliMesajlar.GuncellemeBasarili();
                 
@@ -76,8 +86,18 @@ namespace AracKiralama.Class
         {
             try
             {
-                var user = araba.Araba.Find(id);
-                user.SilindiMi = true;
+                var arac = araba.Araba.Find(id);
+                arac.SilindiMi = true;
+                
+                var kiralama = araba.Kiralamalar.FirstOrDefault(x => x.Arac_Id == arac.Id);
+                if (kiralama.AktifMi)
+                {
+                    kiralama.AktifMi = false;
+                }
+
+
+
+
                 araba.SaveChanges();
                 BasariliMesajlar.SilmeBasarili();
                 return true;

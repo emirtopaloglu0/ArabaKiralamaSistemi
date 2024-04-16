@@ -26,5 +26,27 @@ namespace AracKiralama.Class
             MessageBox.Show("Silme işlemi başarıyla tamamlanmıştır.",
                 "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        internal static void KullaniciDegistirme()
+        {
+            MessageBox.Show("Kullanıcı adı başarıyla değiştirilmiştir.",
+                "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        internal static void SifreDegistirme()
+        {
+            MessageBox.Show("Şifre başarıyla değiştirilmiştir.",
+                "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        internal static void KiralamaIptal()
+        {
+            MessageBox.Show("Kiralama başarılı bir şekilde iptal edilmiştir.",
+                "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        internal static void KiralamaBasarili()
+        {
+            MessageBox.Show("Kiralama işlemi başarılı bir şekilde gerçekleşmiştir.",
+                "Bilgi!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

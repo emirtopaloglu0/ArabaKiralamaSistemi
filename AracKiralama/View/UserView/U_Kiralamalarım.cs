@@ -41,28 +41,14 @@ namespace AracKiralama.View.UserView
                 DialogMesjalar.instance.CancelRent();
                 if (DialogMesjalar.instance.res == DialogResult.Yes)
                 {
-                    var araba = db.Araba.Find(k_CarId);
-                    var kira = db.Kiralamalar.Find(Int32.Parse(Id_TextBox.Text));
-                    if (kira.AktifMi == true)
+                    if (Kiralama.kiralamaClass.KiralaIptal(k_CarId, Int32.Parse(Id_TextBox.Text)))
                     {
-                        var kiralama = db.Kiralamalar.Find(Int32.Parse(Id_TextBox.Text));
-                        kiralama.AktifMi = false;
-                        kiralama.IptalMi = true;
-                        araba.BostaMi = true;
-                        db.SaveChanges();
-                    }
-                    else
-                    {
-                        HataMesajlari.AktifSecim();
-                    }
-                    
+                        BasariliMesajlar.KiralamaIptal();
+                    }                   
                 }
-
             }
             catch
-            {
-
-            }
+            {            }
 
 
         }

@@ -51,7 +51,10 @@ namespace AracKiralama.View.UserView
                     {
                         var user = db.Kullanici.FirstOrDefault(x => x.Kullanici_Adi == UserPanel.instance.loggedUser);
 
-                        Musteri.MusteriClass.AracKirala(Convert.ToInt32(Id_TextBox.Text), user.Id);
+                        if(Kiralama.kiralamaClass.AracKirala(Convert.ToInt32(Id_TextBox.Text), user.Id))
+                        {
+                            BasariliMesajlar.KiralamaBasarili();
+                        }
                     }
                     catch (Exception ex)
                     {

@@ -34,6 +34,17 @@ namespace AracKiralama
                 Plaka_Textbox.Text = A_Araclar.instance.plaka.Trim();
                 Kilometre_Textbox.Text = A_Araclar.instance.km.ToString().Trim();
                 Id_Label.Text = A_Araclar.instance.Id_TextBox.Text;
+
+                if(A_Araclar.instance.aracDurumu)
+                {
+                    Durum_ComboBox.SelectedIndex = Durum_ComboBox.FindStringExact("Boşta");
+                }
+                else
+                {
+                    Durum_ComboBox.SelectedIndex = Durum_ComboBox.FindStringExact("Dolu");
+
+                }
+
             }
             catch
             {
@@ -306,7 +317,7 @@ namespace AracKiralama
                             MarkaBox.SelectedItem.ToString(),
                             ModelBox.SelectedItem.ToString(), CatBox.SelectedItem.ToString(),
                             YakitBox.SelectedItem.ToString(), VitesBox.SelectedItem.ToString(),
-                            Plaka_Textbox.Text, Convert.ToInt32(Kilometre_Textbox.Text)))
+                            Plaka_Textbox.Text, Convert.ToInt32(Kilometre_Textbox.Text), Durum_ComboBox.SelectedItem.ToString()))
                         {
                             Close();
                         }

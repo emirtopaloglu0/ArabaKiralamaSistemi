@@ -46,6 +46,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.Id_Label = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Durum_ComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // MarkaBox
@@ -271,6 +273,30 @@
             this.Id_Label.TabIndex = 52;
             this.Id_Label.Text = "...";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Figtree", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label9.Location = new System.Drawing.Point(27, 267);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(126, 23);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "Araç Durumu";
+            // 
+            // Durum_ComboBox
+            // 
+            this.Durum_ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Durum_ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Durum_ComboBox.FormattingEnabled = true;
+            this.Durum_ComboBox.Items.AddRange(new object[] {
+            "Dolu",
+            "Boşta"});
+            this.Durum_ComboBox.Location = new System.Drawing.Point(158, 264);
+            this.Durum_ComboBox.Name = "Durum_ComboBox";
+            this.Durum_ComboBox.Size = new System.Drawing.Size(167, 32);
+            this.Durum_ComboBox.TabIndex = 40;
+            // 
             // AracGuncelleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,10 +309,12 @@
             this.Controls.Add(this.ModelBox);
             this.Controls.Add(this.CatBox);
             this.Controls.Add(this.YakitBox);
+            this.Controls.Add(this.Durum_ComboBox);
             this.Controls.Add(this.VitesBox);
             this.Controls.Add(this.UpdateCar_Btn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -325,5 +353,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Id_Label;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox Durum_ComboBox;
     }
 }
